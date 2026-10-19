@@ -1,0 +1,176 @@
+# Week 1 Final Test: Version Control Project Using Git & GitHub
+
+## 1. Objective
+
+The objective of this project is to understand and demonstrate the use of Git and GitHub for version control. This project includes creating a repository, tracking changes, making commits, creating branches, merging changes, and managing a remote GitHub repository.
+
+## 2. Tools Used
+
+- Git – To track changes and manage versions.
+- GitHub – To host the project repository online.
+- Terminal – To execute Git commands.
+- Visual Studio Code – To create and edit project files.
+
+## 3. Project Structure
+
+```text
+version-control-project/
+├── README.md
+├── index.html
+└── about.html
+```
+
+## 4. Step-by-Step Implementation
+
+### Step 1: Create a Project Folder
+
+Create a folder named `version-control-project`.
+
+```bash
+mkdir version-control-project
+cd version-control-project
+```
+
+### Step 2: Initialize Git
+
+Initialize Git to start tracking the project.
+
+```bash
+git init
+```
+
+### Step 3: Create Project Files
+
+Create the project files.
+
+```bash
+touch README.md index.html about.html
+```
+
+Add the following content to `README.md`:
+
+```text
+# Version Control Project
+
+This project demonstrates the fundamentals of Git and GitHub.
+
+## Features
+- Git repository initialization
+- Version tracking using commits
+- Branch creation and merging
+- Remote repository management
+```
+
+### Step 4: Check Git Status and Make the First Commit
+
+```bash
+git status
+git add .
+git commit -m "Initial project setup"
+```
+
+This creates the first commit and saves a snapshot of the project in Git history.
+
+### Step 5: Create a GitHub Repository
+
+1. Log in to GitHub.
+2. Click **New repository**.
+3. Enter the repository name: `version-control-project`.
+4. Create the repository without adding a README file, since one already exists locally.
+
+Connect the local project to GitHub. Replace `YOUR_USERNAME` with your GitHub username.
+
+```bash
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/version-control-project.git
+git push -u origin main
+```
+
+### Step 6: Create a New Branch
+
+Create a branch to work on a new feature.
+
+```bash
+git checkout -b feature/about-page
+```
+
+Add content to `about.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+</head>
+<body>
+    <h1>About Our Project</h1>
+    <p>This project demonstrates Git and GitHub fundamentals.</p>
+</body>
+</html>
+```
+
+Save and commit the changes.
+
+```bash
+git add about.html
+git commit -m "Add about page"
+git push -u origin feature/about-page
+```
+
+### Step 7: Merge the Feature Branch
+
+Switch back to the main branch and merge the feature branch.
+
+```bash
+git checkout main
+git merge feature/about-page
+```
+
+Push the merged changes to GitHub.
+
+```bash
+git push origin main
+```
+
+### Step 8: Verify the Repository
+
+Use the following commands to verify the repository and its history.
+
+```bash
+git status
+git branch
+git log --oneline
+git remote -v
+```
+
+Check GitHub to confirm that the files and merged changes are available in the remote repository.
+
+## 5. Git Commands Used
+
+| Command | Purpose |
+|---|---|
+| `git init` | Initializes a Git repository |
+| `git status` | Shows the current working tree status |
+| `git add .` | Stages changes |
+| `git commit -m "message"` | Saves a snapshot in Git history |
+| `git branch` | Lists branches |
+| `git checkout -b branch-name` | Creates and switches to a branch |
+| `git merge branch-name` | Merges changes from another branch |
+| `git remote -v` | Displays remote repository URLs |
+| `git push` | Uploads commits to a remote repository |
+| `git log --oneline` | Displays a compact commit history |
+
+## 6. Expected Outcome
+
+After completing this project:
+
+- A local Git repository is created.
+- Project files are tracked using Git.
+- Multiple commits are created.
+- A feature branch is created and pushed to GitHub.
+- The feature branch is merged into the main branch.
+- The final project is available in the remote GitHub repository.
+
+## 7. Conclusion
+
+This project helped me understand the basic workflow of Git and GitHub. I learned how to initialize a repository, track file changes, create commits, work with branches, merge changes, and push code to GitHub. These skills are essential for managing software projects and collaborating with other developers.
